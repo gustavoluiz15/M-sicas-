@@ -1,37 +1,132 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Site de Músicas carregado com sucesso!');
+/* Definição das cores */
+:root {
+    --primary-color: #FF8C00; /* Laranja Vívido */
+    --secondary-color: #000000; /* Preto */
+    --background-color: #FFFFFF; /* Branco */
+    --text-color-dark: #333333;
+    --text-color-light: #FFFFFF;
+    --border-radius-large: 15px;
+    --border-radius-small: 8px;
+}
 
-    // *** PARTE DE INTEGRAÇÃO COM SPOTIFY ***
-    // ESTA PARTE É COMPLEXA E REQUER A CONFIGURAÇÃO DE UMA CONTA DE DESENVOLVEDOR NO SPOTIFY
-    // E O MANUSEIO SEGURO DE CHAVES DE API (Client ID e Client Secret) E AUTENTICAÇÃO OAuth 2.0.
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    // A maneira mais simples e legalmente segura de começar é usar EMBEDS (Players embutidos) do Spotify.
-    // Você substitui a div `.spotify-player-placeholder` no HTML pelo código de embed.
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
 
-    /*
-    // EXEMPLO BÁSICO DE UMA FUNÇÃO QUE BUSCARIA DADOS (Se a API estivesse configurada)
-    function fetchArtistData(artistName) {
-        // Exemplo: Fazer uma requisição à sua API de back-end (ou diretamente à Spotify se o token estiver disponível)
-        // fetch(`SUA_URL_DA_API/artist/${artistName}`)
-        //    .then(response => response.json())
-        //    .then(data => {
-        //        // Atualiza o DOM com as músicas e player
-        //    })
-        //    .catch(error => console.error('Erro ao buscar artista:', error));
+/* Cabeçalho (Header) */
+.header {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Conteúdo Principal (Main) */
+.main-content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Layout dos Artistas (Grid) */
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Cartão do Artista */
+.artist-card {
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-large); /* Borda Arredondada */
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(255, 140, 0, 0.3);
+}
+
+.artist-header {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 15px;
+    text-align: center;
+}
+
+.artist-header h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.artist-body {
+    padding: 20px;
+}
+
+.artist-body h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+/* Lista de Músicas/Embeds */
+.spotify-embed {
+    margin-bottom: 20px;
+    /* Para que o iframe ocupe todo o espaço */
+}
+
+/* Estilização do Rodapé */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade (Para telas menores) */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
     }
 
-    // Você chamaria esta função para os artistas principais ao carregar o site.
-    // fetchArtistData('Ariana Grande');
-    */
-
-
-    // Adicionar um evento de clique básico nos cards (apenas para demonstração)
-    const artistCards = document.querySelectorAll('.artist-card');
-    artistCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const artistName = card.querySelector('h3').textContent;
-            console.log(`Você clicou no perfil de ${artistName}.`);
-            // Aqui você poderia adicionar lógica para mostrar a discografia completa, etc.
-        });
-    });
-});
+    .main-content {
+        padding: 20px 10px;
+    }
+}
