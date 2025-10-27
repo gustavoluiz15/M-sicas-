@@ -1,1 +1,131 @@
 
+:root{
+  --orange: #ff7a2d;
+  --dark: #0b0b0b;
+  --muted: #f5f5f5;
+  --card-shadow: 0 8px 30px rgba(11,11,11,0.25);
+  --radius: 18px; /* bordas arredondadas grandes */
+  --glass: rgba(255,255,255,0.06);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #0b0b0b 0%, #0f0f0f 100%);
+  color: var(--muted);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* top bar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 28px;
+  background: linear-gradient(90deg, rgba(11,11,11,0.95), rgba(0,0,0,0.6));
+  backdrop-filter: blur(6px);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-circle{
+  width:46px;height:46px;border-radius:50%;
+  background: linear-gradient(135deg,var(--orange),#ff9b59);
+  color:white;display:flex;align-items:center;justify-content:center;
+  font-weight:700;box-shadow: 0 6px 18px rgba(255,122,45,0.18);
+  border:3px solid rgba(255,255,255,0.04);
+}
+.topbar h1{font-size:18px;margin:0;color:var(--muted)}
+.topbar nav a{
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;padding:8px 12px;border-radius:12px;
+}
+.topbar nav a:hover{background:rgba(255,255,255,0.03)}
+
+/* hero */
+.hero{
+  display:flex;gap:20px;
+  padding:42px 28px;
+  align-items:center;
+  justify-content:space-between;
+}
+.hero-content{max-width:720px}
+.hero h2{
+  font-size:36px;margin:0 0 12px;color:white;
+  letter-spacing:-0.02em;
+}
+.hero p{margin:0 0 18px;color:rgba(255,255,255,0.75)}
+.btn{
+  display:inline-block;
+  background:var(--orange);
+  color:#111;padding:12px 18px;border-radius:14px;
+  text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(255,122,45,0.15);
+}
+.hero-art{position:relative;width:220px;height:140px;display:flex;align-items:center;justify-content:center}
+.blob{
+  position:absolute;border-radius:40px;height:120px;width:180px;filter:blur(28px);
+  transform: rotate(-15deg);
+}
+.blob.orange{background:rgba(255,122,45,0.85);top:6px;left:10px}
+.blob.white{background:rgba(255,255,255,0.06);top:28px;left:60px;transform:rotate(6deg);width:120px;height:80px}
+
+/* artists grid */
+.artists-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:22px;
+  padding:20px 28px 48px;
+}
+
+/* card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255,255,255,0.03);
+  display:flex;gap:16px;align-items:flex-start;
+}
+.avatar{
+  width:84px;height:84px;border-radius:20px;flex:0 0 84px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--orange),#ff9b59);
+  color: #0b0b0b;font-weight:800;font-size:20px;
+  box-shadow:0 8px 18px rgba(255,122,45,0.14);
+}
+.card-body{flex:1}
+.artist-name{font-size:18px;margin:0;color:white}
+.artist-meta{color:rgba(255,255,255,0.6);margin:6px 0 10px}
+.card-controls{display:flex;gap:8px;flex-wrap:wrap}
+.card-controls .mini-btn{
+  padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.03);
+  color:rgba(255,255,255,0.9);border:0;cursor:pointer;font-weight:600;
+}
+.card-controls .mini-btn.primary{background:var(--orange);color:#0b0b0b}
+.embed-wrap{
+  margin-top:12px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);
+  background:rgba(0,0,0,0.35);
+}
+
+/* responsivo iframe */
+.embed-wrap iframe{width:100%;height:120px;border:0;display:block}
+
+/* about & footer */
+.about{padding:24px 28px;border-top:1px solid rgba(255,255,255,0.02)}
+.credit{margin-top:10px;color:rgba(255,255,255,0.6)}
+.footer{
+  margin-top:auto;padding:16px 28px;text-align:center;color:rgba(255,255,255,0.45);
+  border-top:1px solid rgba(255,255,255,0.02);
+}
+
+/* pequenos ajustes móveis */
+@media (max-width:720px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .hero-art{order:-1;margin-bottom:8px}
+  .embed-wrap iframe{height:160px}
+}
