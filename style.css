@@ -1,120 +1,188 @@
+/* ====== CONFIGURAÇÃO GERAL ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
-  background: linear-gradient(180deg, #000 0%, #111 100%);
+  background-color: #0a0a0a;
+  color: #eaeaea;
+  overflow-x: hidden;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 700;
   color: white;
-  min-height: 100vh;
-  padding: 40px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-header h1 {
-  font-size: 2.5em;
-}
-
-header span {
+.logo span {
   color: #ff7b00;
 }
 
-header p {
-  margin: 15px 0 25px;
-  color: #ddd;
+.navbar nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-#verArtistas {
+.navbar nav a:hover {
+  color: #ff7b00;
+}
+
+/* ====== HERO ====== */
+.hero {
+  height: 70vh;
+  background: linear-gradient(to right, #000 40%, #111 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 15px;
+}
+
+.hero span {
+  color: #ff7b00;
+}
+
+.hero p {
+  color: #ccc;
+  margin-bottom: 25px;
+  font-size: 1.1em;
+}
+
+.btn {
   background-color: #ff7b00;
   color: white;
-  border: none;
   padding: 12px 30px;
-  font-size: 1em;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-#verArtistas:hover {
-  background-color: #ff9933;
+.btn:hover {
+  background-color: #ff9e33;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 70px;
+/* ====== GRID DE ARTISTAS ====== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  padding: 80px 60px;
+  background: #0e0e0e;
 }
 
 .card {
-  background: #1a1a1a;
-  border-radius: 20px;
-  width: 280px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
+  position: relative;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  background: #222;
+  box-shadow: 0 10px 25px rgba(255, 123, 0, 0.2);
 }
 
-.card h2 {
-  font-size: 1.4em;
-  margin-bottom: 8px;
-  color: #fff;
-}
-
-.card p {
-  font-size: 0.9em;
-  color: #bbb;
-  margin-bottom: 15px;
-}
-
-.card iframe {
-  border-radius: 12px;
+.card img {
   width: 100%;
-  height: 80px;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
 }
 
-/* Seção Sobre */
-#sobre {
-  background: #0d0d0d;
-  border-radius: 15px;
-  padding: 25px 30px;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #e0e0e0;
+.card:hover img {
+  opacity: 0.4;
 }
 
-#sobre h3 {
-  color: white;
+.card-content {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+}
+
+.card-content h2 {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+.card-content p {
+  font-size: 0.9em;
+  color: #ddd;
   margin-bottom: 10px;
 }
 
-#sobre p {
-  margin-bottom: 8px;
+.card-content iframe {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+}
+
+/* ====== SOBRE / RODAPÉ ====== */
+footer {
+  background-color: #080808;
+  padding: 50px 60px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+footer h3 {
+  color: #ff7b00;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+footer p {
+  max-width: 700px;
+  margin: 0 auto 10px;
+  color: #ccc;
   line-height: 1.6em;
 }
 
-#sobre .creditos {
-  color: #999;
-  font-size: 0.9em;
+footer .creditos {
+  color: #777;
+  margin-top: 15px;
 }
 
-#sobre .creditos strong {
+footer .creditos strong {
   color: #fff;
 }
 
-#sobre .creditos span {
+footer .creditos span {
   color: #ff7b00;
 }
-
