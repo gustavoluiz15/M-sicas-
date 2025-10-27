@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,34 +8,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">🎧 <span>Orange</span>Beat</div>
     <nav>
       <a href="#artistas">Artistas</a>
+      <a href="#playlists">Playlists</a>
       <a href="#sobre">Sobre</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <h1>Descubra <span>artistas e estilos</span></h1>
-      <p>Um portal moderno para explorar música, gêneros e sons em um ambiente dark e elegante.</p>
+      <p>Explore o universo da música com um visual moderno, escuro e cheio de personalidade.</p>
       <a href="#artistas" class="btn">Ver artistas</a>
     </div>
   </section>
 
-  <main id="artistas" class="grid-container">
-    <!-- Perfis dos artistas serão adicionados aqui -->
-  </main>
+  <!-- Seção de Artistas -->
+  <section id="artistas" class="grid-container">
+    <!-- Os artistas são inseridos via script.js -->
+  </section>
 
+  <!-- Seção de Playlists -->
+  <section id="playlists" class="playlists">
+    <h2>Playlists em destaque</h2>
+    <div class="playlist-grid">
+      <div class="playlist-card">
+        <h3>Pop Hits 2025</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+
+      <div class="playlist-card">
+        <h3>Indie Chill Vibes</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2yvmlOdMYzV" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+
+      <div class="playlist-card">
+        <h3>Dark & Moody</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWVIzZt2GAU4X" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
   <footer id="sobre">
     <h3>Sobre</h3>
     <p><strong>OrangeBeat</strong> é um site feito para destacar artistas e estilos musicais em um visual limpo e acolhedor — 
-       sem bordas pontudas, com estética dark em tons de preto, branco e laranja.</p>
+       com estética dark em tons de preto, branco e laranja.</p>
     <p class="creditos">Site feito por <strong>ieecaetanorocha</strong> — <span>instagram</span></p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
