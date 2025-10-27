@@ -1,66 +1,253 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrangeBeat — Música e Estilo</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OrangeBeat - Descubra artistas e estilos</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #f97316; /* laranja */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffa040;
+    }
+
+    header {
+      background-color: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      border-bottom: 1px solid #222;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    header a {
+      color: #f97316;
+    }
+
+    header a:hover {
+      color: #ffa040;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.3rem;
+      color: #f97316;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 0;
+      color: #fff;
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #aaa;
+    }
+
+    button#ver-artistas {
+      background-color: #f97316;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      color: #111;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 2rem;
+    }
+
+    button#ver-artistas:hover {
+      background-color: #ffa040;
+    }
+
+    section#artistas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 115, 22, 0.2);
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(255, 115, 22, 0.5);
+    }
+
+    .card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #f97316;
+      box-shadow: 0 0 10px #f97316;
+    }
+
+    .card h2 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.6rem;
+      color: #f97316;
+      text-align: center;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #ccc;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .card iframe {
+      width: 100%;
+      height: 80px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 0 8px rgba(255, 115, 22, 0.4);
+    }
+
+    section#sobre {
+      max-width: 700px;
+      margin: 4rem auto 2rem;
+      background-color: #121212;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 115, 22, 0.3);
+      color: #eee;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    section#sobre b {
+      color: #f97316;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #222;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 480px) {
+      .card img {
+        width: 140px;
+        height: 140px;
+      }
+      .card iframe {
+        height: 70px;
+      }
+      button#ver-artistas {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">🎧 <span>Orange</span>Beat</div>
-    <nav>
-      <a href="#artistas">Artistas</a>
-      <a href="#playlists">Playlists</a>
-      <a href="#sobre">Sobre</a>
-    </nav>
+  <header>
+    <a href="#artistas">Artistas</a>
+    <a href="#sobre">Sobre</a>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Descubra <span>artistas e estilos</span></h1>
-      <p>Explore o universo da música com um visual moderno, escuro e cheio de personalidade.</p>
-      <a href="#artistas" class="btn">Ver artistas</a>
-    </div>
-  </section>
+  <main>
+    <h1>Descubra artistas e estilos</h1>
+    <p class="subtitle">Um portal moderno para explorar música, gêneros e sons em um ambiente dark e elegante.</p>
 
-  <!-- Seção de Artistas -->
-  <section id="artistas" class="grid-container">
-    <!-- Os artistas são inseridos via script.js -->
-  </section>
+    <button id="ver-artistas" onclick="scrollToArtistas()">Ver artistas</button>
 
-  <!-- Seção de Playlists -->
-  <section id="playlists" class="playlists">
-    <h2>Playlists em destaque</h2>
-    <div class="playlist-grid">
-      <div class="playlist-card">
-        <h3>Pop Hits 2025</h3>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <section id="artistas">
+      <div class="card">
+        <img src="https://i.imgur.com/xF2rJwW.jpg" alt="Ariana Grande" />
+        <h2>Ariana Grande</h2>
+        <p>Pop / R&B — Faixas e hits em destaque</p>
+        <iframe src="https://open.spotify.com/embed/artist/66CXWjxzNUsdJxJ2JdwvnR" allow="encrypted-media" allowtransparency="true"></iframe>
       </div>
 
-      <div class="playlist-card">
-        <h3>Indie Chill Vibes</h3>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2yvmlOdMYzV" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <div class="card">
+        <img src="https://i.imgur.com/Z2XZBhz.jpg" alt="Lana Del Rey" />
+        <h2>Lana Del Rey</h2>
+        <p>Indie / Dream pop — Atmosfera cinematográfica</p>
+        <iframe src="https://open.spotify.com/embed/artist/00FQb4jTyendYWaN8pK0wa" allow="encrypted-media" allowtransparency="true"></iframe>
       </div>
 
-      <div class="playlist-card">
-        <h3>Dark & Moody</h3>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWVIzZt2GAU4X" width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <div class="card">
+        <img src="https://i.imgur.com/ZgQW93I.jpg" alt="Taylor Swift" />
+        <h2>Taylor Swift</h2>
+        <p>Pop / Country — Discografia icônica</p>
+        <iframe src="https://open.spotify.com/embed/artist/06HL4z0CvFAxyc27GXpf02" allow="encrypted-media" allowtransparency="true"></iframe>
       </div>
-    </div>
-  </section>
 
-  <!-- Rodapé -->
-  <footer id="sobre">
-    <h3>Sobre</h3>
-    <p><strong>OrangeBeat</strong> é um site feito para destacar artistas e estilos musicais em um visual limpo e acolhedor — 
-       com estética dark em tons de preto, branco e laranja.</p>
-    <p class="creditos">Site feito por <strong>ieecaetanorocha</strong> — <span>instagram</span></p>
+      <div class="card">
+        <img src="https://i.imgur.com/tY2Lk3E.jpg" alt="Billie Eilish" />
+        <h2>Billie Eilish</h2>
+        <p>Alternative pop — Som intimista e experimental</p>
+        <iframe src="https://open.spotify.com/embed/artist/6qqNVTkY8uBg9cP3Jd7DAH" allow="encrypted-media" allowtransparency="true"></iframe>
+      </div>
+
+      <div class="card">
+        <img src="https://i.imgur.com/qn1sFqG.jpg" alt="The Weeknd" />
+        <h2>The Weeknd</h2>
+        <p>Pop / Synthwave / R&B — Produção impecável e som noturno</p>
+        <iframe src="https://open.spotify.com/embed/artist/1Xyo4u8uXC1ZmMpatF05PJ" allow="encrypted-media" allowtransparency="true"></iframe>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <p><b>Sobre</b><br />
+        OrangeBeat é um site feito para destacar artistas e estilos musicais em um visual limpo e acolhedor — sem bordas pontudas, com estética dark em tons de preto, branco e laranja.<br />
+        Site feito por <b>ieecaetanorocha</b> — instagram
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 OrangeBeat - Todos os direitos reservados
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    function scrollToArtistas() {
+      document.getElementById('artistas').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
