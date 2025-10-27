@@ -1,1 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OrangeBeat — música sem bordas pontiagudas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-circle">OB</div>
+      <h1>OrangeBeat</h1>
+    </div>
+    <nav>
+      <a href="#artists">Artistas</a>
+      <a href="#about">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Toque. Descubra. Curta.</h2>
+        <p>Perfis rápidos de artistas com player integrado — laranja, preto e branco, cantos arredondados.</p>
+        <a class="btn" href="#artists">Ver artistas</a>
+      </div>
+      <div class="hero-art">
+        <!-- decoração suave, sem pontas -->
+        <div class="blob orange"></div>
+        <div class="blob white"></div>
+      </div>
+    </section>
+
+    <section id="artists" class="artists-grid">
+      <!-- cards são injetados pelo script.js -->
+    </section>
+
+    <section id="about" class="about">
+      <h3>Sobre</h3>
+      <p>Este site-demo mostra perfis de artistas e players do Spotify embutidos no site. Você pode tocar sem sair da página (o Spotify pode pedir login para reproduzir faixas completas).</p>
+      <p class="credit">Site foi feito por <strong>ieecaetanorocha</strong> — instagram</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> OrangeBeat — feito por ieecaetanorocha</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
