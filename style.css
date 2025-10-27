@@ -1,4 +1,4 @@
-/* ====== CONFIGURAÇÃO GERAL ====== */
+/* ====== BASE ====== */
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@
 
 body {
   background-color: #0a0a0a;
-  color: #eaeaea;
+  color: #f0f0f0;
   overflow-x: hidden;
 }
 
@@ -23,11 +23,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo {
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 700;
   color: white;
 }
@@ -41,7 +41,7 @@ body {
   text-decoration: none;
   margin-left: 25px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .navbar nav a:hover {
@@ -85,7 +85,7 @@ body {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
 .btn:hover {
@@ -97,14 +97,14 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 35px;
-  padding: 80px 60px;
+  padding: 100px 60px 60px;
   background: #0e0e0e;
 }
 
 .card {
   position: relative;
-  height: 340px;
-  border-radius: 16px;
+  height: 360px;
+  border-radius: 18px;
   overflow: hidden;
   background-color: #1a1a1a;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -119,7 +119,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.65;
   transition: opacity 0.4s ease;
 }
 
@@ -131,7 +131,6 @@ body {
   position: absolute;
   bottom: 0;
   background: linear-gradient(transparent, rgba(0,0,0,0.9));
-  color: #fff;
   width: 100%;
   padding: 20px;
 }
@@ -153,7 +152,42 @@ body {
   border-radius: 10px;
 }
 
-/* ====== SOBRE / RODAPÉ ====== */
+/* ====== PLAYLISTS ====== */
+.playlists {
+  padding: 60px 50px;
+  background-color: #101010;
+  text-align: center;
+}
+
+.playlists h2 {
+  color: #ff7b00;
+  font-size: 1.8em;
+  margin-bottom: 40px;
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.playlist-card {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.playlist-card:hover {
+  transform: translateY(-5px);
+}
+
+.playlist-card h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* ====== RODAPÉ ====== */
 footer {
   background-color: #080808;
   padding: 50px 60px;
@@ -186,3 +220,4 @@ footer .creditos strong {
 footer .creditos span {
   color: #ff7b00;
 }
+
