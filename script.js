@@ -1,107 +1,45 @@
-const artists = [
-  // POP
+const artistas = [
   {
-    name: "Ariana Grande",
-    bio: "Pop / R&B — voz poderosa e presença marcante.",
-    image: "https://i.scdn.co/image/ab6761610000e5ebfeb14b32b94a8c823c57e972"
+    nome: "Ariana Grande",
+    genero: "Pop / R&B",
+    descricao: "faixas e hits em destaque",
+    spotify: "https://open.spotify.com/embed/artist/66CXWjxzNUsdJxJ2JdwvnR"
   },
   {
-    name: "Taylor Swift",
-    bio: "Pop / Country — compositora e artista multigeracional.",
-    image: "https://i.scdn.co/image/ab6761610000e5ebd7f0a3b94f7e5f3dd7cde1f3"
+    nome: "Lana Del Rey",
+    genero: "Indie / Dream pop",
+    descricao: "atmosfera cinematográfica",
+    spotify: "https://open.spotify.com/embed/artist/00FQb4jTyendYWaN8pK0wa"
   },
   {
-    name: "Lana Del Rey",
-    bio: "Indie / Dream Pop — som nostálgico e cinematográfico.",
-    image: "https://i.scdn.co/image/ab6761610000e5ebd5f8dcb0ad96a4e23ad7d9d3"
-  },
-  // ROCK
-  {
-    name: "Queen",
-    bio: "Rock clássico — ícones do som teatral e poderoso.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb80b1da8d9a7e54b2b53e9a4a"
+    nome: "Taylor Swift",
+    genero: "Pop / Country",
+    descricao: "discografia icônica",
+    spotify: "https://open.spotify.com/embed/artist/06HL4z0CvFAxyc27GXpf02"
   },
   {
-    name: "Arctic Monkeys",
-    bio: "Rock alternativo — guitarras afiadas e letras inteligentes.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb6cb3e4c85fcb0c1e5fda49a9"
+    nome: "Billie Eilish",
+    genero: "Alternative pop",
+    descricao: "som intimista",
+    spotify: "https://open.spotify.com/embed/artist/6qqNVTkY8uBg9cP3Jd7DAH"
   },
   {
-    name: "Foo Fighters",
-    bio: "Rock / Grunge — energia pura e refrões épicos.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb85a76f44d71ff2e8f92a8b42"
-  },
-  // MPB
-  {
-    name: "Caetano Veloso",
-    bio: "MPB / Tropicália — poesia e inovação musical brasileira.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb5d40e1efbad1c86e9eb7f4d1"
-  },
-  {
-    name: "Gal Costa",
-    bio: "MPB / Bossa Nova — uma das maiores vozes do Brasil.",
-    image: "https://i.scdn.co/image/ab6761610000e5ebe39a1c9fefc479c98e6f0eb2"
-  },
-  {
-    name: "Gilberto Gil",
-    bio: "MPB / Samba — mistura de ritmos e alegria contagiante.",
-    image: "https://i.scdn.co/image/ab6761610000e5ebee04a3c0eb4b2f54765c9987"
-  },
-  // RAP
-  {
-    name: "Emicida",
-    bio: "Rap / Hip Hop — lirismo, consciência e criatividade.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb8d6a0cecf73e798dcdaba2c7"
-  },
-  {
-    name: "Criolo",
-    bio: "Rap / MPB — mistura de gêneros e letras poéticas.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb179b16ed830315a9b07c9f2d"
-  },
-  {
-    name: "Racionais MC's",
-    bio: "Rap Nacional — voz das periferias e resistência cultural.",
-    image: "https://i.scdn.co/image/ab6761610000e5ebd5d97b5ce3e28b44939eae0d"
-  },
-  // ELETRÔNICO
-  {
-    name: "Daft Punk",
-    bio: "Eletrônico / House — robôs do som futurista.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb6ab0d3a2668e3a0b0a9e3f0b"
-  },
-  {
-    name: "Alok",
-    bio: "Eletrônico / EDM — DJ brasileiro de alcance mundial.",
-    image: "https://i.scdn.co/image/ab6761610000e5eb4e1cc7df1e8e19fdf02f5d85"
-  },
-  {
-    name: "Calvin Harris",
-    bio: "Eletrônico / Pop — produtor e hitmaker internacional.",
-    image: "https://i.scdn.co/image/ab6761610000e5ebfb1a8c540dfb21965b1c71ef"
+    nome: "The Weeknd",
+    genero: "Pop / R&B",
+    descricao: "produção impecável e som noturno",
+    spotify: "https://open.spotify.com/embed/artist/1Xyo4u8uXC1ZmMpatF05PJ"
   }
 ];
 
-const container = document.querySelector(".artists-grid");
+const container = document.getElementById("listaArtistas");
 
-artists.forEach(artist => {
-  const card = document.createElement("article");
-  card.className = "card";
-
-  const img = document.createElement("img");
-  img.src = artist.image;
-  img.alt = artist.name;
-
-  const name = document.createElement("h4");
-  name.textContent = artist.name;
-
-  const bio = document.createElement("p");
-  bio.textContent = artist.bio;
-
-  card.appendChild(img);
-  card.appendChild(name);
-  card.appendChild(bio);
-
+artistas.forEach(artista => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+    <h2>${artista.nome}</h2>
+    <p>${artista.genero} — ${artista.descricao}</p>
+    <iframe src="${artista.spotify}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  `;
   container.appendChild(card);
 });
-
-document.getElementById("year").textContent = new Date().getFullYear();
