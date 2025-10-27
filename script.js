@@ -33,6 +33,13 @@ const artistas = [
     descricao: "Produção impecável e som noturno",
     imagem: "https://i.imgur.com/qn1sFqG.jpg",
     spotify: "https://open.spotify.com/embed/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+  },
+  {
+    nome: "Doja Cat",
+    genero: "Pop / Rap",
+    descricao: "Estilo provocante e batidas cativantes",
+    imagem: "https://i.imgur.com/YAEsmkL.jpg",
+    spotify: "https://open.spotify.com/embed/artist/5cj0lLjcoR7YOSnhnX0Po5"
   }
 ];
 
