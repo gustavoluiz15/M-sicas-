@@ -3,28 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrangeBeat — Descubra artistas e estilos</title>
+  <title>OrangeBeat — Música e Estilo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Descubra <span>artistas e estilos</span></h1>
-    <p>Perfis visuais de artistas do Pop, Rock, MPB e muito mais — laranja, preto e branco, com estilo suave e moderno.</p>
-    <button id="verArtistas">Ver artistas</button>
+  <header class="navbar">
+    <div class="logo">🎧 <span>Orange</span>Beat</div>
+    <nav>
+      <a href="#artistas">Artistas</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
   </header>
 
-  <main id="listaArtistas">
-    <!-- Perfis adicionados dinamicamente -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Descubra <span>artistas e estilos</span></h1>
+      <p>Um portal moderno para explorar música, gêneros e sons em um ambiente dark e elegante.</p>
+      <a href="#artistas" class="btn">Ver artistas</a>
+    </div>
+  </section>
+
+  <main id="artistas" class="grid-container">
+    <!-- Perfis dos artistas serão adicionados aqui -->
   </main>
 
-  <section id="sobre">
+  <footer id="sobre">
     <h3>Sobre</h3>
-    <p>OrangeBeat é um site feito para destacar artistas e estilos musicais em um visual limpo e acolhedor. 
-       Sem bordas pontudas, em tons de preto, branco e laranja.</p>
-    <p class="creditos">
-      Site foi feito por <strong>ieecaetanorocha</strong> — <span>instagram</span>
-    </p>
-  </section>
+    <p><strong>OrangeBeat</strong> é um site feito para destacar artistas e estilos musicais em um visual limpo e acolhedor — 
+       sem bordas pontudas, com estética dark em tons de preto, branco e laranja.</p>
+    <p class="creditos">Site feito por <strong>ieecaetanorocha</strong> — <span>instagram</span></p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
