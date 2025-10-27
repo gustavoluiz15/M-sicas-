@@ -1,46 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Música | Seu Nome do Site</title>
+    <title>Música Vibe - Seu Portal Musical</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header class="header">
-        <h1>Seu Site de Músicas</h1>
+        <h1>Música Vibe</h1>
     </header>
 
-    <main class="content">
+    <main class="main-content">
         <h2>Artistas em Destaque</h2>
         
-        <section class="artist-grid" id="artist-profiles">
-            <div class="artist-card">
-                <img src="caminho/para/ariana_grande.jpg" alt="Ariana Grande" class="profile-pic">
-                <h3>Ariana Grande</h3>
-                <p>Pop, R&B</p>
-                <div class="spotify-player-placeholder">Player de Música (API ou Embed)</div>
-            </div>
-
-            <div class="artist-card">
-                <img src="caminho/para/lana_del_rey.jpg" alt="Lana Del Rey" class="profile-pic">
-                <h3>Lana Del Rey</h3>
-                <p>Pop Barroco, Sadcore</p>
-                <div class="spotify-player-placeholder">Player de Música (API ou Embed)</div>
-            </div>
-
-            <div class="artist-card">
-                <img src="caminho/para/taylor_swift.jpg" alt="Taylor Swift" class="profile-pic">
-                <h3>Taylor Swift</h3>
-                <p>Pop, Country</p>
-                <div class="spotify-player-placeholder">Player de Música (API ou Embed)</div>
-            </div>
-            
+        <section id="artist-profiles" class="artist-grid">
             </section>
+
     </main>
 
     <footer class="footer">
-        <p>Site feito por <a href="https://www.instagram.com/ieecaetanorocha/" target="_blank">@ieecaetanorocha</a> do Instagram.</p>
+        <p>&copy; 2024 Música Vibe. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://instagram.com/ieecaetanorocha" target="_blank">@ieecaetanorocha</a></p>
     </footer>
 
     <script src="script.js"></script>
