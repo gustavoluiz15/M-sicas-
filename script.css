@@ -1,0 +1,37 @@
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Site de Músicas carregado com sucesso!');
+
+    // *** PARTE DE INTEGRAÇÃO COM SPOTIFY ***
+    // ESTA PARTE É COMPLEXA E REQUER A CONFIGURAÇÃO DE UMA CONTA DE DESENVOLVEDOR NO SPOTIFY
+    // E O MANUSEIO SEGURO DE CHAVES DE API (Client ID e Client Secret) E AUTENTICAÇÃO OAuth 2.0.
+
+    // A maneira mais simples e legalmente segura de começar é usar EMBEDS (Players embutidos) do Spotify.
+    // Você substitui a div `.spotify-player-placeholder` no HTML pelo código de embed.
+
+    /*
+    // EXEMPLO BÁSICO DE UMA FUNÇÃO QUE BUSCARIA DADOS (Se a API estivesse configurada)
+    function fetchArtistData(artistName) {
+        // Exemplo: Fazer uma requisição à sua API de back-end (ou diretamente à Spotify se o token estiver disponível)
+        // fetch(`SUA_URL_DA_API/artist/${artistName}`)
+        //    .then(response => response.json())
+        //    .then(data => {
+        //        // Atualiza o DOM com as músicas e player
+        //    })
+        //    .catch(error => console.error('Erro ao buscar artista:', error));
+    }
+
+    // Você chamaria esta função para os artistas principais ao carregar o site.
+    // fetchArtistData('Ariana Grande');
+    */
+
+
+    // Adicionar um evento de clique básico nos cards (apenas para demonstração)
+    const artistCards = document.querySelectorAll('.artist-card');
+    artistCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const artistName = card.querySelector('h3').textContent;
+            console.log(`Você clicou no perfil de ${artistName}.`);
+            // Aqui você poderia adicionar lógica para mostrar a discografia completa, etc.
+        });
+    });
+});
