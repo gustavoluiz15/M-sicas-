@@ -1,12 +1,11 @@
-/* Definição das cores */
+/* Definição das cores para TEMA ESCURO */
 :root {
-    --primary-color: #FF8C00; /* Laranja Vívido */
-    --secondary-color: #000000; /* Preto */
-    --background-color: #FFFFFF; /* Branco */
-    --text-color-dark: #333333;
-    --text-color-light: #FFFFFF;
+    --primary-color: #FF8C00; /* Laranja Vívido (Accent) */
+    --secondary-color: #121212; /* Fundo Principal - Spotify Dark */
+    --background-color: #1E1E1E; /* Fundo Secundário/Cartões */
+    --text-color-dark: #E0E0E0; /* Texto Claro */
+    --text-color-light: #FFFFFF; /* Texto no Laranja */
     --border-radius-large: 15px;
-    --border-radius-small: 8px;
 }
 
 /* Reset básico e tipografia */
@@ -18,8 +17,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color-dark);
+    background-color: var(--secondary-color); /* Fundo Escuro */
+    color: var(--text-color-dark); /* Texto Claro */
     line-height: 1.6;
 }
 
@@ -28,7 +27,8 @@ body {
     background-color: var(--secondary-color);
     color: var(--text-color-light);
     padding: 20px 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    border-bottom: 2px solid var(--primary-color); /* Linha laranja de destaque */
 }
 
 .header h1 {
@@ -59,17 +59,17 @@ body {
 
 /* Cartão do Artista */
 .artist-card {
-    background-color: var(--background-color);
+    background-color: var(--background-color); /* Fundo dos Cartões (Preto mais claro) */
     border: 2px solid var(--primary-color);
     border-radius: var(--border-radius-large); /* Borda Arredondada */
     overflow: hidden;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .artist-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(255, 140, 0, 0.3);
+    box-shadow: 0 12px 20px rgba(255, 140, 0, 0.4); /* Brilho Laranja no hover */
 }
 
 .artist-header {
@@ -79,35 +79,26 @@ body {
     text-align: center;
 }
 
-.artist-header h3 {
-    font-size: 1.5em;
-    margin: 0;
-}
-
 .artist-body {
     padding: 20px;
+    color: var(--text-color-dark);
 }
 
 .artist-body h4 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: var(--secondary-color);
-}
-
-/* Lista de Músicas/Embeds */
-.spotify-embed {
-    margin-bottom: 20px;
-    /* Para que o iframe ocupe todo o espaço */
+    color: var(--primary-color); /* Títulos em laranja */
 }
 
 /* Estilização do Rodapé */
 .footer {
     background-color: var(--secondary-color);
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
     font-size: 0.9em;
+    border-top: 2px solid var(--primary-color);
 }
 
 .footer a {
@@ -120,12 +111,11 @@ body {
     text-decoration: underline;
 }
 
-/* Responsividade (Para telas menores) */
+/* Responsividade */
 @media (max-width: 768px) {
     .header {
         padding: 15px 20px;
     }
-
     .main-content {
         padding: 20px 10px;
     }
