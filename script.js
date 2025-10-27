@@ -1,82 +1,53 @@
-// script.js
-// Agora os perfis já aparecem abertos (embed visível).
-
+// Perfis fixos com imagens (sem players)
 const artists = [
   {
     name: "Ariana Grande",
-    id: "66CXWjxzNUsdJxJ2JdwvnR",
-    bio: "Pop / R&B — faixas e hits em destaque",
-    initials: "AG"
+    bio: "Pop / R&B — voz poderosa e presença marcante.",
+    image: "https://i.scdn.co/image/ab6761610000e5ebfeb14b32b94a8c823c57e972"
   },
   {
     name: "Lana Del Rey",
-    id: "00FQb4jTyendYWaN8pK0wa",
-    bio: "Indie / Dream pop — atmosfera cinematográfica",
-    initials: "LD"
+    bio: "Indie / Dream Pop — som nostálgico e cinematográfico.",
+    image: "https://i.scdn.co/image/ab6761610000e5ebd5f8dcb0ad96a4e23ad7d9d3"
   },
   {
     name: "Taylor Swift",
-    id: "06HL4z0CvFAxyc27GXpf02",
-    bio: "Pop / Country — discografia icônica",
-    initials: "TS"
+    bio: "Pop / Country — compositora e artista multigeracional.",
+    image: "https://i.scdn.co/image/ab6761610000e5ebd7f0a3b94f7e5f3dd7cde1f3"
   },
   {
     name: "Billie Eilish",
-    id: "6qqNVTkY8uBg9cP3Jd7DAH",
-    bio: "Alternative pop — som intimista",
-    initials: "BE"
+    bio: "Alternative Pop — som intimista e experimental.",
+    image: "https://i.scdn.co/image/ab6761610000e5eb0b23a2b90fffb3f0b0bda8c3"
   },
   {
     name: "The Weeknd",
-    id: "1Xyo4u8uXC1ZmMpatF05PJ",
-    bio: "R&B / Pop — grooves sombrios",
-    initials: "TW"
+    bio: "R&B / Pop — estilo sombrio e envolvente.",
+    image: "https://i.scdn.co/image/ab6761610000e5ebc83e80e64ad0f6bfcaa4d0c3"
   }
 ];
 
 const container = document.querySelector(".artists-grid");
 
-function createArtistCard(artist) {
+artists.forEach(a => {
   const card = document.createElement("article");
   card.className = "card";
 
-  const avatar = document.createElement("div");
-  avatar.className = "avatar";
-  avatar.textContent = artist.initials;
-
-  const body = document.createElement("div");
-  body.className = "card-body";
+  const img = document.createElement("img");
+  img.src = a.image;
+  img.alt = a.name;
 
   const name = document.createElement("h4");
-  name.className = "artist-name";
-  name.textContent = artist.name;
+  name.textContent = a.name;
 
-  const meta = document.createElement("div");
-  meta.className = "artist-meta";
-  meta.textContent = artist.bio;
+  const bio = document.createElement("p");
+  bio.textContent = a.bio;
 
-  // embed direto (sem botão)
-  const embedWrap = document.createElement("div");
-  embedWrap.className = "embed-wrap";
+  card.appendChild(img);
+  card.appendChild(name);
+  card.appendChild(bio);
 
-  const iframe = document.createElement("iframe");
-  iframe.src = `https://open.spotify.com/embed/artist/${artist.id}`;
-  iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-  iframe.loading = "lazy";
-
-  embedWrap.appendChild(iframe);
-
-  body.appendChild(name);
-  body.appendChild(meta);
-  body.appendChild(embedWrap);
-
-  card.appendChild(avatar);
-  card.appendChild(body);
-
-  return card;
-}
-
-artists.forEach(a => container.appendChild(createArtistCard(a)));
+  container.appendChild(card);
+});
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
